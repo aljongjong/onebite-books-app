@@ -14,7 +14,7 @@ export const dynamic = "auto";
 // 4. error : 페이지를 강제로 Static 페이지 설정 (동적함수, 캐싱되지 않는 데이터 패칭 등 Static으로 설정하면 안되는 이유가 있다면 -> 빌드 오류) /search/page.tsx 예시
 
 async function AllBooks() {
-  await delay(1500);
+  await delay(500);
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_SERVER_URL}/book`,
     // { cache: "no-store" }
@@ -36,7 +36,7 @@ async function AllBooks() {
 }
 
 async function RecoBooks() {
-  await delay(3000);
+  await delay(1000);
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_SERVER_URL}/book/random`,
     { next: { revalidate: 3 } }

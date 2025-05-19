@@ -8,7 +8,7 @@ import { Suspense } from "react";
 // export const dynamic = "error";
 
 async function SearchResult({ q }: { q: string }) {
-  await delay(1500);
+  await delay(500);
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_SERVER_URL}/book/search?q=${q}`,
     { cache: "force-cache" }
